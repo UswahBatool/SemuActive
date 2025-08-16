@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="semu.css">
+        <script>
+           // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all "Shop Now" buttons
+    const shopNowButtons = document.querySelectorAll(".add-cart button, .buy-now button");
+
+    // Add click event listeners to each button
+    shopNowButtons.forEach((button, index) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default button behavior
+            const productDetails = getProductDetails(index);
+            redirectToProductDetailPage(productDetails);
+        });
+    });
+});
+
+// Function to retrieve product details based on index
+function getProductDetails(index) {
+    const products = [
+        { name: "Sweatsuit", price: "PKR 7500", image: "image2.jpeg", description: "Comfortable sweatsuit for casual wear." },
+        { name: "Sleeveless Puffer Jacket", price: "PKR 5000", image: "image 3.jpeg", description: "Stylish puffer jacket for chilly days." },
+        { name: "Baseball Shirt", price: "PKR 2500", image: "image6.jpeg", description: "Classic baseball shirt for sports lovers." },
+        { name: "Varsity Jacket", price: "PKR 4300", image: "image7.jpeg", description: "Trendy varsity jacket for everyday wear." },
+        {
+            name: "Boxing Headgear",price: "PKR 2300",image: "image8.jpeg",description: "Durable and lightweight boxing headgear offering superior protection and comfort."
+        },
+        {
+            name: "Puffer Jacket",price: "PKR 5000",image: "image9.jpeg",description: "Stylish and warm puffer jacket, perfect for chilly weather."
+        },
+        {
+            name: "Shorts",price: "PKR 1700",image: "image10.jpeg",description: "Comfortable and breathable shorts, ideal for casual outings or sports."
+        },
+        {
+            name: "Hoodie",price: "PKR 3200",image: "image11.jpeg",description: "Cozy and fashionable hoodie, perfect for everyday wear."
+        },
+        {
+            name: "Boxing Gloves",price: "PKR 3000",image: "image12.jpeg",description: "High-quality boxing gloves designed for maximum performance and durability."
+        },
+        {
+            name: "Full Sleeves Shirt", price: "PKR 1800",image: "image1.jpeg",description: "Classic full sleeves shirt, versatile for both casual and formal occasions."
+        },
+        {
+            name: "T-Shirt",price: "PKR 1600",image: "image13.jpeg",description: "Soft and stylish T-shirt, perfect for a relaxed and casual look."
+        },
+        {
+            name: "Track Suit",price: "PKR 3800",image: "image15.jpg",description: "Comfortable and durable tracksuit, perfect for workouts or leisure."
+        }
+
+    ];
+    return products[index] || null;
+}
+
+// Function to redirect to the product detail page
+function redirectToProductDetailPage(product) {
+    if (product) {
+        const queryParams = new URLSearchParams(product).toString();
+        window.location.href = `product_detail.html?${queryParams}`;
+    } else {
+        console.error("Product details not found.");
+    }
+}
+
+
+    </script>
+        </head>
+<body>
+    <section class=" top-txt ">
+        <div class="head container ">
+            <div class="head-txt ">
+                <p style="text-align: center;">Contact us on +92 301 6161988 for placing orders.</p>
+            </div>
+            <!--<div class="sing_in_up ">
+                <a href="# ">SIGN IN</a>
+                <a href="# ">SIGN UP</a>
+            </div>-->
+        </div>
+    </section>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <input type="checkbox" name="" id="checkbox">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="logo">
+                <img src="logo.jpeg" alt="Logo" class="logo-img">
+                <h3>Be Active Be Pro</h3>
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="home_page ">
+            <div class="home_img ">
+                <img src="istockphoto-.jpg" alt="img ">
+            </div>
+            <div class="home_txt ">
+                <p class="collectio ">ATHLETIC WEAR COLLECTION</p>
+                <h2>SEMU Active<br>Collection 2025</h2>
+                <div class="home_label ">
+                    <p>A specialist label creating athletic essentials. Ethically crafted<br>with an unwavering commitment to exceptional quality.</p>
+                </div>
+                <button><a href="#shop">SHOP NOW</a><i class='bx bx-right-arrow-alt'></i></button>
+                <div class="home_social_icons">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-pinterest'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection">
+        <div class="collections container">
+            <div class="content">
+                <img src="image 1.jpeg" alt="img" />
+                <div class="img-content">
+                    <p>Clothing Collections</p>
+                    <button><a href="#shop">SHOP NOW</a></button>
+                </div>
+            </div>
+            <div class="content2">
+                <img src="image4.jpeg" alt="img" />
+                <div class="img-content2">
+                    <p>Shorts</p>
+                    <button><a href="#shop">SHOP NOW</a></button>
+                </div>
+            </div>
+            <div class="content3">
+                <img src="image5.jpeg" alt="img" />
+                <div class="img-content3">
+                    <p>Boxing Gloves</p>
+                    <button><a href="#shop">SHOP NOW</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="shop">
+        <div class="seller container">
+            <h2>Top Sales</h2>
+            <div class="best-seller">
+                <div class="best-p1">
+                    <img src="image2.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Sweatsuit</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 7500
+                            <div class="colors">
+                                <i class='bx bxs-circle red'></i>
+                                <i class='bx bxs-circle blue'></i>
+                                <i class='bx bxs-circle white'></i>
+                            </div>
+                        </div>
+                        
+                        <div class="add-cart">
+                            <button>Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image 3.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Sleeveless Puffer Jacket</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 5000 
+                            <div class="colors">
+                                <i class='bx bxs-circle green'></i>
+                                <i class='bx bxs-circle grey'></i>
+                                <i class='bx bxs-circle brown'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image6.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Baseball shirt</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 2500
+                            <div class="colors">
+                                <i class='bx bxs-circle brown'></i>
+                                <i class='bx bxs-circle green'></i>
+                                <i class='bx bxs-circle blue'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image7.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Varsity Jacket</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 4300
+                            <div class="colors">
+                                <i class='bx bxs-circle red'></i>
+                                <i class='bx bxs-circle grey'></i>
+                                <i class='bx bxs-circle blue'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seller container">
+            <h2>New Arrivals</h2>
+            <div class="best-seller">
+                <div class="best-p1">
+                    <img src="image8.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Boxing Headgear</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 2300
+                            <div class="colors">
+                                <i class='bx bxs-circle blank'></i>
+                                <i class='bx bxs-circle blue'></i>
+                                <i class='bx bxs-circle brown'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image9.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Puffer Jacket</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 5000
+                            <div class="colors">
+                                <i class='bx bxs-circle brown'></i>
+                                <i class='bx bxs-circle red'></i>
+                                <i class='bx bxs-circle green'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image10.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Shorts</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 1700
+                            <div class="colors">
+                                <i class='bx bxs-circle grey'></i>
+                                <i class='bx bxs-circle blank'></i>
+                                <i class='bx bxs-circle blank'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image11.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Hoodie</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 3200
+                            <div class="colors">
+                                <i class='bx bxs-circle grey'></i>
+                                <i class='bx bxs-circle red'></i>
+                                <i class='bx bxs-circle blue'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seller container">
+            <h2>Hot Sales</h2>
+            <div class="best-seller">
+                <div class="best-p1">
+                    <img src="image12.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Boxing Gloves</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 3000
+                            <div class="colors">
+                                <i class='bx bxs-circle grey'></i>
+                                <i class='bx bxs-circle black'></i>
+                                <i class='bx bxs-circle blue'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image 1.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Full Sleeves Shirt</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 1800
+                            <div class="colors">
+                                <i class='bx bxs-circle blank'></i>
+                                <i class='bx bxs-circle blue'></i>
+                                <i class='bx bxs-circle brown'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image13.jpeg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>T-Shirt</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 1600
+                            <div class="colors">
+                                <i class='bx bxs-circle blank'></i>
+                                <i class='bx bxs-circle red'></i>
+                                <i class='bx bxs-circle blue'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="best-p1">
+                    <img src="image15.jpg" alt="img">
+                    <div class="best-p1-txt">
+                        <div class="name-of-p">
+                            <p>Track Suit</p>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <div class="price">
+                            pkr 3800
+                            <div class="colors">
+                                <i class='bx bxs-circle blank'></i>
+                                <i class='bx bxs-circle grey'></i>
+                                <i class='bx bxs-circle brown'></i>
+                            </div>
+                        </div>
+                        <div class="buy-now">
+                            <button><a href="product_Detail.html">Shop Now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--<section id="news">
+        <div class="news-heading">
+            <p>LATEST NEWS</p>
+            <h2>Fashion New Trends</h2>
+        </div>
+        <div class="l-news container">
+            <div class="l-news1">
+                <div class="news1-img">
+                    <img src="https://i.postimg.cc/2y6wbZCm/news1.jpg" alt="img">
+                </div>
+                <div class="news1-conte">
+                    <div class="date-news1">
+                        <p><i class='bx bxs-calendar'></i> 12 February 2022</p>
+                        <h4>What Curling Irons Are The Best Ones</h4>
+                        <a href="https://www.vogue.com/article/best-curling-irons" target="_blank">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="l-news2">
+                <div class="news2-img">
+                    <img src="https://i.postimg.cc/9MXPK7RT/news2.jpg" alt="img">
+                </div>
+                <div class="news2-conte">
+                    <div class="date-news2">
+                        <p><i class='bx bxs-calendar'></i> 17 February 2022</p>
+                        <h4>The Health Benefits Of Sunglasses</h4>
+                        <a href="https://www.rivieraopticare.com/blog/314864-the-health-benefits-of-wearing-sunglasses_2/" target="_blank">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="l-news3">
+                <div class="news3-img">
+                    <img src="https://i.postimg.cc/x1KKdRLM/news3.jpg" alt="img">
+                </div>
+                <div class="news3-conte">
+                    <div class="date-news3">
+                        <p><i class='bx bxs-calendar'></i> 26 February 202</p>
+                        <h4>Eternity Bands Do Last Forever</h4>
+                        <a href="https://www.briangavindiamonds.com/news/eternity-bands-symbolize-love-that-lasts-forever/" target="_blank">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <section id="contact">
+        <div class="contact container">
+            <h2>CONTACT US</h2>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d419.5527852271136!2d74.65478354202361!3d32.275710123901774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1735620916152!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <form action="https://formspree.io/f/xzbowpjq" method="POST">
+            <div class="form">
+                <div class="form-txt">
+                    <h4>INFORMATION</h4>
+                    <span>We Manufacture and export CUSTOMISED Boxing and Sports Wear. <br>Contact us for placing orders and product info</span>
+                    <h3>Pakistan</h3>
+                    <p>Rana Street, Faisal colony near Aman Chowk, sialkot road Pasrur, dist Sialkot<br>Contact Us at +92 301 6161988</p>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+    </section>
+    <footer>
+        <div class="footer-container container">
+            <div class="content_1">
+                <h2 style="color: white; margin-bottom: 10px;">SEMU ACTIVE</h2>
+                <p>The customer is at the heart of our<br>unique business model, which includes<br>design.</p>
+                
+            </div>
+            <div class="content_2">
+                <h4>SHOPPING</h4>
+                <a href="#shop">Clothing Store</a>
+                <a href="#contact">Contact</a>
+                
+            </div>
+            <div class="content_3">
+                <p style="color: white;">
+                    <h4 style="color: white; margin-bottom: 10px;">OUR CATEGORIES</h4>
+                    <h6 style="color: rgba(255, 255, 255, 0.745); margin-bottom: 8px;">Sports Wear</h6>
+                    <h6 style="color: rgba(255, 255, 255, 0.745); margin-bottom: 8px;">Casual Wear</h6>
+                    <h6 style="color: rgba(255, 255, 255, 0.745); margin-bottom: 8px;">Kick Boxing Apparel</h6>
+                </p>
+                
+            </div>
+           
+        </div>
+        <div class="f-design">
+            <div class="f-design-txt container">
+                <p>Boxing and Sports Wear</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
